@@ -115,6 +115,11 @@ if (! empty($id) ) {
   case 6460: // Swedish Organization Number
     $link_string = str_replace("-", "", $id) ;
     break;
+  # placeholder
+  case -1:
+    list($user,$game) = explode($id, ":", 1);
+    $link_string = "https://$user.itch.io/$game";
+    break;
   default:
     $link_string = $id ;
     break ;
